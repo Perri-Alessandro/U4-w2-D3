@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,19 +57,19 @@ public class Main {
         System.out.println("PRODOTTI IN CATEGORIA BOOK CON PREZZO MAGGIORE DI CENTO:");
         List<Product> libriFiltrati = all.stream()
                 .filter(book -> book.category.equals("BOOKS") && book.price > 100)
-                .collect(Collectors.toList());
+                .toList();
         libriFiltrati.forEach(prod -> System.out.println(prod));
 
         System.out.println("ORDINI CON PRODOTTI DA CATEGORIA BABY:");
         List<Order> babyCategory = orders.stream()
                 .filter(order -> order.getProduct().category.equals("BABY"))
-                .collect(Collectors.toList());
+                .toList();
         babyCategory.forEach(System.out::println); //ForEach stampa gli ordini filtrati
 
         System.out.println("PRODOTTI IN CATEGORIA BOYS CON SCONTO 10%:");
         List<Product> boysDiscount = all.stream()
                 .filter(boy -> boy.category.equals("BOYS"))
-                .collect(Collectors.toList());
+                .toList();
         boysDiscount.forEach(product -> {
             double prezzoScontato = product.price - (product.price * 0.1);
             System.out.println(product + " NEW PRICE: " + prezzoScontato);
@@ -83,7 +82,7 @@ public class Main {
                 .filter(date -> !date.getOrderDate().isBefore(LocalDate.of(2021, 02, 01))
                         && !date.getOrderDate().isAfter(LocalDate.of(2021, 04, 01)))
                 .map(Order::getProduct)
-                .collect(Collectors.toList());
+                .toList();
         tier2ProductsOnDates.forEach(prod -> System.out.println(prod));
 
         sc.close();
