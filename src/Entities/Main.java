@@ -20,7 +20,9 @@ public class Main {
         Product sette = new Product("CULLA", "BABY", 160.88);
         Product otto = new Product("CIBO PER CANI", "ANIMALI", 42.80);
         Product nove = new Product("LEDGER NANO X", "SICUREZZA", 98.70);
-        Product dieci = new Product("GIOCO BABY", "BAY", 26.40);
+        Product dieci = new Product("GIOCO BABY", "BABY", 26.40);
+        Product undici = new Product("BOXER", "BOYS", 8.20);
+        Product dodici = new Product("XXX", "BOYS", 22.4);
 
         Customer a = new Customer("GIOVANNI");
         Customer b = new Customer("GIACOMO");
@@ -43,6 +45,8 @@ public class Main {
         all.add(otto);
         all.add(nove);
         all.add(dieci);
+        all.add(undici);
+        all.add(dodici);
 
         List<Order> orders = new ArrayList<>();
         orders.add(primo);
@@ -55,6 +59,12 @@ public class Main {
 
         System.out.println("ORDINI CON PRODOTTI DA CATEGORIA BABY:");
         orders.stream().filter(order -> order.getProduct().category.equals("BABY")).forEach(System.out::println); //ForEach stampa gli ordini filtrati
+
+        System.out.println("PRODOTTI IN CATEGORIA BOYS CON SCONTO 10%:");
+        all.stream().filter(boy -> boy.category.equals("BOYS")).forEach(product -> {
+            double prezzoScontato = product.price - (product.price * 0.1);
+            System.out.println(product + " NEW PRICE: " + prezzoScontato);
+        });
 
         sc.close();
     }
