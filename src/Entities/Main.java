@@ -66,6 +66,10 @@ public class Main {
             System.out.println(product + " NEW PRICE: " + prezzoScontato);
         });
 
+
+        System.out.println("LISTA DI PRODOTTI ORDINATI DA CLIENTI TIER 2 TRA 01/02/2021 E 01/04/2021:");
+        orders.stream().filter(ord -> ord.getCustomer().getTier() == 2).filter(date -> !date.getOrderDate().isBefore(LocalDate.of(2021, 02, 01)) && !date.getOrderDate().isAfter(LocalDate.of(2021, 04, 01))).forEach(System.out::println);
+
         sc.close();
     }
 }
