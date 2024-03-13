@@ -15,7 +15,7 @@ public class Order {
     private LocalDate orderDate;
 
     private LocalDate deliveryDate;
-    
+
     public Order(String status, Customer customer, Product product, LocalDate orderDate, LocalDate deliveryDate) {
         Random idd = new Random();
         this.id = idd.nextInt(10000, 99000);
@@ -48,5 +48,17 @@ public class Order {
 
     public LocalDate getDeliveryDate() {
         return deliveryDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", status='" + status + '\'' +
+                ", product=" + product +
+                ", customer=" + customer +
+                ", orderDate=" + orderDate +
+                ", deliveryDate=" + deliveryDate +
+                '}';
     }
 }

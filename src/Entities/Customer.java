@@ -8,7 +8,7 @@ public class Customer {
 
     private int tier;
 
-    public Customer(String name, int tier) {
+    public Customer(String name) {
         Random idd = new Random();
         this.id = idd.nextInt(10000, 99000);
         this.name = name;
