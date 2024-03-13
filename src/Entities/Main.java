@@ -30,7 +30,7 @@ public class Main {
 
         Order primo = new Order("ORDINE IN TRANSITO", a, sette, LocalDate.now(), LocalDate.of(2024, 05, 22));
         Order secondo = new Order("ESEGUITO", b, otto, LocalDate.of(2024, 02, 24), LocalDate.now());
-        Order terzo = new Order("ESEGUITO", a, sei, LocalDate.of(2024, 02, 24), LocalDate.now());
+        Order terzo = new Order("ESEGUITO", a, sei, LocalDate.of(2021, 02, 24), LocalDate.of(2021, 03, 16));
         Order quarto = new Order("ORDINE IN TRANSITO", c, uno, LocalDate.now(), LocalDate.of(2024, 04, 02));
 
 
